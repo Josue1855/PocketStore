@@ -1,0 +1,8 @@
+{
+  "name": "pocketstore",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Catálogo offline con Vanilla JS",
+  "scripts": { "test": "node tests/offline.cjs" },
+  "devDependencies": { "playwright": "^1.58.0" }
+}

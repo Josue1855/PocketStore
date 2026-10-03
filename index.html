@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#244f42">
+  <meta name="description" content="Un catálogo de contactos que va contigo, incluso sin internet.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" type="image/png" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+  <title>PocketStore · Tu catálogo offline</title>
+</head>
+<body>
+  <a class="skip" href="#main">Saltar al catálogo</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="PocketStore, inicio"><span class="logo" aria-hidden="true">p.</span>PocketStore<span class="brand-tag">OFFLINE FIRST</span></a>
+    <div class="header-actions"><span id="connection" class="connection">Comprobando conexión</span><button id="install" class="button small" hidden>Instalar app</button></div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="title">
+      <div><p class="eyebrow">PEQUEÑA APP. SIEMPRE CONTIGO.</p><h1 id="title">Tu catálogo,<br><em>en tu bolsillo.</em></h1><p class="intro">Encuentra tus contactos y guarda tus favoritos.<br>Con internet o sin él, siguen aquí.</p></div>
+      <aside class="pocket-note"><span class="note-icon" aria-hidden="true">↗</span><p>Listo para llevar</p><span id="offline-ready">Preparando la copia sin conexión…</span><div class="note-bottom"><span aria-hidden="true">●</span> LOCAL · LIGERO · TUYO</div></aside>
+    </section>
+    <section class="catalog" aria-labelledby="catalog-title">
+      <div class="catalog-heading"><div><p class="eyebrow">TU DIRECTORIO</p><h2 id="catalog-title">Personas que conectan.</h2></div><button id="refresh" class="button"><span aria-hidden="true">↻</span> Actualizar</button></div>
+      <div class="toolbar"><label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar por nombre, correo, ciudad o empresa</span><input id="search" type="search" placeholder="Busca un nombre, ciudad o empresa…" autocomplete="off"></label><div class="tabs" role="group" aria-label="Filtrar contactos"><button id="all" class="tab active" aria-pressed="true">Todos <span id="total">0</span></button><button id="favorites" class="tab" aria-pressed="false">Favoritos <span id="favorite-count">0</span></button></div></div>
+      <div class="results-line"><span id="result-count" role="status">Cargando catálogo…</span><span id="source" class="source">Copia local disponible</span></div>
+      <p id="notice" class="notice" role="status" hidden></p>
+      <div id="grid" class="grid" aria-label="Contactos"></div>
+      <div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3 id="empty-title">No encontramos coincidencias</h3><p id="empty-text">Prueba con otro nombre, ciudad o empresa.</p></div>
+    </section>
+    <section class="offline-banner"><span class="banner-icon" aria-hidden="true">↓</span><div><h2>La conexión cambia. Tu catálogo se queda.</h2><p>Los contactos se guardan en este dispositivo para que puedas consultarlos sin internet.</p></div><span class="banner-label">HECHO PARA IR CONTIGO</span></section>
+  </main>
+  <footer><span class="footer-brand">p. <strong>PocketStore</strong></span><span>Vanilla JS · PWA · Catálogo offline</span><span>JOSUE GALVAN ARANA</span></footer>
+  <dialog id="details"><div class="dialog-header"><p class="eyebrow">FICHA DE CONTACTO</p><button id="close-details" class="icon-button" aria-label="Cerrar ficha">×</button></div><div id="detail-content"></div><p class="dialog-note">Datos de demostración de JSONPlaceholder.</p></dialog>
+  <noscript><p class="notice">Activa JavaScript para consultar el catálogo y utilizar el modo sin conexión.</p></noscript>
+</body>
+</html>
